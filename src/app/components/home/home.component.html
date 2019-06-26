@@ -1,0 +1,14 @@
+<div [formGroup]="productForm">
+  Name:
+  <input type="text" formControlName="name" />
+  Color:
+  <input type="text" formControlName="color" />
+  Desc:
+  <input type="text" formControlName="desc" />
+  Price:
+  <input type="text" formControlName="price" />
+</div>
+<button (click)="getData()">Akceptuj</button>
+<div *ngFor="let el of products">
+  <a [routerLink]="['/details', el.id]" [style.color]="el.color"><p>Produkt{{ el.id + 1 }}</p></a>
+</div>
